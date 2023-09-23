@@ -19,7 +19,7 @@ import com.example.demo.Service.CustomerService;
 public class CustomerController {
 	@Autowired(required = true)
     private CustomerService cs;
-    @PostMapping("/save")
+    @PostMapping("/savec")
     public String saveCustomer(@RequestBody CustomerDTO customerDTO)
     {
         String id = cs.addCustomer(customerDTO);

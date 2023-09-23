@@ -1,5 +1,6 @@
 package com.example.demo.Model;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -16,6 +17,8 @@ public class Customer {
 	private String password;
 	private String address;
 	private long phone;
+	
+	
 	public Customer(int custid, String customername, String email, String password, String address, long phone) {
 		super();
 		this.custid = custid;

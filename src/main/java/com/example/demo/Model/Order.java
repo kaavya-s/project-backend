@@ -1,48 +1,52 @@
 package com.example.demo.Model;
 
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="orders")
 public class Order {
 	@Id
 	@GeneratedValue
-	private int id;
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public List<OrderItem> getItems() {
-		return items;
-	}
-	public void setItems(List<OrderItem> items) {
-		this.items = items;
-	}
-	public double getTotamt() {
-		return totamt;
-	}
-	public void setTotamt(double totamt) {
-		this.totamt = totamt;
-	}
-	public Order(int id, List<OrderItem> items, double totamt) {
-		super();
-		this.id = id;
-		this.items = items;
-		this.totamt = totamt;
-	}
-	@OneToMany(cascade=CascadeType.ALL)
-	private List<OrderItem> items ;
-	private double totamt;
+	private int oid;
+	private String name;
+	private int price;
+	private int amount;
 	public Order() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public Order(int oid, String name, int price, int amount) {
+		super();
+		this.oid = oid;
+		this.name = name;
+		this.price = price;
+		this.amount = amount;
+	}
+	public int getOid() {
+		return oid;
+	}
+	public void setOid(int oid) {
+		this.oid = oid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public int getAmount() {
+		return amount;
+	}
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
 }
